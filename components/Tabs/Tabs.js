@@ -1,18 +1,18 @@
 class TabLink {
   constructor(tabElement){
     // assign this.tabElement to the tabElement DOM reference
-    // this.tabElement;
+    this.tabElement = tabElement;
     
     // Get the `data-tab` value from this.tabElement and store it here
-    // this.tabData = ; 
+    this.tabData = this.tabElement.dataset.tab; 
     
     // We need to find out if a user clicked 'all' cards or a specific category.  Follow the instructions below to accomplish this task:    
     
-    /* <- Delete this comment block when you work on the if statement
+    // Delete this comment block when you work on the if statement
     // Check to see if this.tabData is equal to 'all'
-    if(){
+    if(this.tabData === 'all'){
       // If `all` is true, select all cards regardless of their data attribute values
-      // this.cards = ;
+      this.cards = document.querySelectorAll('.card');
     } else {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
@@ -43,7 +43,8 @@ class TabLink {
     // Add a class of ".active-tab" to this.tabElement
     // this.tabElement;
   
-    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. Just un-comment the code and study what is happening here.
+    // Notice we are looping through the this.cards array and invoking selectCard() from the TabCard class. 
+    // Just un-comment the code and study what is happening here.
     // this.cards.forEach(card => card.selectCard());
   }
 }
@@ -69,4 +70,4 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll('.tab').forEach(newTabLink => new TabLink(newTabLink));
